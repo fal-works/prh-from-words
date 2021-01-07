@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "newLine": "LF"
+  },
+  "include": ["./src/**/*.ts"]
+}

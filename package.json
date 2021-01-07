@@ -1,0 +1,25 @@
+{
+  "name": "prh-ja-choon",
+  "description": "長音関連のprhデータ",
+  "version": "0.1.0",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.0",
+    "@types/node": "^14.14.20",
+    "@typescript-eslint/eslint-plugin": "4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "7.17.0",
+    "eslint-config-prettier": "^7.1.0",
+    "js-yaml": "^4.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "scripts": {
+    "build": "ts-node src/index.ts && prettier --write ./*.yaml",
+    "vscode": "run-s vscode:*",
+    "vscode:eslint": "code --install-extension dbaeumer.vscode-eslint",
+    "vscode:prettier": "code --install-extension esbenp.prettier-vscode"
+  }
+}

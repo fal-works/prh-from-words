@@ -1,0 +1,35 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "prettier"],
+  "ignorePatterns": [],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2019
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.ts"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint"],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
+    },
+    {
+      "files": ["scripts/*.js"],
+      "rules": {
+        "lines-around-comment": "error"
+      }
+    },
+    {
+      "files": ["rollup.config.js"]
+    }
+  ]
+}
