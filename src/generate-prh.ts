@@ -15,18 +15,23 @@ export type PrhElement = {
  */
 export type ConverterFunction = (word: string) => PrhElement;
 
+/** Generates a `string` to be written into a `prh` YAML file. */
 const stringifyPrh = (elements: PrhElement[]) => {
-  return elements
-    .map(({ pattern, expected, prh }) => {
-      return `- pattern: ${pattern}
-  expected: ${expected}
-  prh: ${prh}`;
-    })
-    .join("\n\n");
+  return (
+    "rules:\n" +
+    elements
+      .map(({ pattern, expected, prh }) => {
+        return `  - pattern: ${pattern}
+    expected: ${expected}
+    prh: ${prh}
+`;
+      })
+      .join("\n")
+  );
 };
 
 /**
- * Creates a YAML file for `prh`.
+ * Generates a YAML file for `prh`.
  *
  * @param srcFilePath Path to the source YAML file,
  * which must be a flat sequence of strings.
