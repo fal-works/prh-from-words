@@ -1,5 +1,5 @@
-import * as fs from "fs";
-import { load as parseYAML } from "js-yaml";
+import fs = require("fs");
+import jsYaml = require("js-yaml");
 
 /**
  * Returns `array` as `string[]` if all elements are of type `string`.
@@ -22,7 +22,7 @@ const validateStringList = (array: any[]) => {
  */
 export const loadList = async (filePath: string): Promise<string[]> => {
   const fileContent = await fs.promises.readFile(filePath);
-  const data = parseYAML(fileContent.toString());
+  const data = jsYaml.load(fileContent.toString());
 
   if (!Array.isArray(data)) throw new Error(`Not a sequence: ${filePath}`);
 
