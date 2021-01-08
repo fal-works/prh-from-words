@@ -1,1 +1,3 @@
-export { requireChoonAtEnd } from "./requireChoon";
+import requireChoonAtEnd = require("./requireChoonAtEnd");
+
+export { requireChoonAtEnd };
