@@ -1,6 +1,6 @@
 {
   "name": "@fal-works/prh-from-words",
-  "description": "Generates prh file (YAML) from any list of terms.",
+  "description": "Generates prh rules from any list of words.",
   "version": "0.1.0",
   "license": "MIT",
   "author": "FAL",
