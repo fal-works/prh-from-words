@@ -1,7 +1,7 @@
 import { generatePrhFile } from "./generate-prh";
-import type { ConvertFunction } from "./generate-prh";
+import type { PrhElement, ConverterFunction } from "./generate-prh";
 
-const requireChoon: ConvertFunction = (srcWord) => {
+const requireChoon: ConverterFunction = (srcWord) => {
   if (!srcWord.endsWith("ー"))
     throw new Error(`Invalid input word: ${srcWord}`);
 
@@ -15,3 +15,6 @@ const requireChoon: ConvertFunction = (srcWord) => {
 };
 
 generatePrhFile("dictionary/choon-list.yaml", "choon.yaml", requireChoon);
+
+export { generatePrhFile };
+export type { PrhElement, ConverterFunction };
