@@ -9,9 +9,12 @@
     "sourceType": "module",
     "ecmaVersion": 2019
   },
+  "rules": {
+    "lines-around-comment": "error"
+  },
   "overrides": [
     {
-      "files": ["src/**/*.ts"],
+      "files": ["src/**/*.ts", "types/**/*.d.ts"],
       "extends": [
         "plugin:@typescript-eslint/recommended",
         "prettier/@typescript-eslint"
@@ -21,15 +24,6 @@
       "rules": {
         "@typescript-eslint/no-explicit-any": "off"
       }
-    },
-    {
-      "files": ["scripts/*.js"],
-      "rules": {
-        "lines-around-comment": "error"
-      }
-    },
-    {
-      "files": ["rollup.config.js"]
     }
   ]
 }

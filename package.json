@@ -1,9 +1,19 @@
 {
-  "name": "prh-ja-choon",
-  "description": "長音関連のprhデータ",
+  "name": "@fal-works/prh-from-words",
+  "description": "Generates prh file (YAML) from any list of terms.",
   "version": "0.1.0",
   "license": "MIT",
+  "author": "FAL",
+  "files": [
+    "lib",
+    "types",
+    "src",
+    "sample-terms"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "devDependencies": {
+    "@fal-works/bundle-helper": "^0.3.1",
     "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.20",
     "@typescript-eslint/eslint-plugin": "4.12.0",
@@ -17,7 +27,8 @@
     "typescript": "^4.1.3"
   },
   "scripts": {
-    "build": "ts-node src/index.ts && prettier --write ./*.yaml",
+    "build": "node build.js",
+    "test": "node test/index.js",
     "vscode": "run-s vscode:*",
     "vscode:eslint": "code --install-extension dbaeumer.vscode-eslint",
     "vscode:prettier": "code --install-extension esbenp.prettier-vscode"

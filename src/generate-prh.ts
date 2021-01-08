@@ -1,5 +1,5 @@
-import * as fs from "fs";
-import { loadList } from "./yaml";
+import fs = require("fs");
+import yaml = require("./yaml");
 
 /**
  * List element of prh data.
@@ -18,13 +18,11 @@ export type ConverterFunction = (word: string) => PrhElement;
 const stringifyPrh = (elements: PrhElement[]) => {
   return elements
     .map(({ pattern, expected, prh }) => {
-      return `
-- pattern: ${pattern}
+      return `- pattern: ${pattern}
   expected: ${expected}
-  prh: ${prh}
-`;
+  prh: ${prh}`;
     })
-    .join("");
+    .join("\n\n");
 };
 
 /**
@@ -41,7 +39,7 @@ export const generatePrhFile = async (
   destFilePath: string,
   toPrhElement: ConverterFunction
 ): Promise<void> => {
-  const srcList = await loadList(srcFilePath);
+  const srcList = await yaml.loadList(srcFilePath);
 
   const prhElements = srcList.map(toPrhElement);
   const stringifiedPrh = stringifyPrh(prhElements);
